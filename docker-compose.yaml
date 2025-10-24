@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  web:
+    image: php:8.1-apache
+    container_name: bilet-sistemi
+    ports:
+      - "5501:80"
+    volumes:
+      - ./src:/var/www/html
+      - ./database:/var/www/database
+    environment:
+      - APACHE_DOCUMENT_ROOT=/var/www/html
